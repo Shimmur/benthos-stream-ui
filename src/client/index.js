@@ -1,5 +1,5 @@
-const host = import.meta.env.VITE_BENTHOS_HOST
-const port = import.meta.env.VITE_BENTHOS_PORT
+const host = import.meta.env.VITE_BENTHOS_HOST || "localhost"
+const port = import.meta.env.VITE_BENTHOS_PORT || 4195
 const BENTHOS_BASE_URL = `http://${host}:${port}`
 
 const call = async (path, { method }) => {
