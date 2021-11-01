@@ -8,6 +8,7 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@windmill/react-ui": "^0.6.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^5.3.0"

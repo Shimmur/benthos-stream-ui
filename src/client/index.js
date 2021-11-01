@@ -5,7 +5,7 @@ const BENTHOS_BASE_URL = `http://${host}:${port}`
 const call = async (path, { method }) => {
   const response = await fetch(`${BENTHOS_BASE_URL}/${path}`, {
     method: method || 'GET',
-    mode: 'no-cors',
+    mode: 'cors',
     cache: 'no-cache',
   });
 
