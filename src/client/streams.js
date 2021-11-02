@@ -1,9 +1,9 @@
-import { GET } from '.'
+import { GET } from ".";
 
 export const getStreams = () => {
-  return GET('streams')
-}
+  return GET("streams");
+};
 
 export const getStream = (streamId) => {
-  return GET(`streams/${streamId}`)
-}
+  return GET(`streams/${streamId}`);
+};

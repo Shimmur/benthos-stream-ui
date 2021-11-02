@@ -5,8 +5,8 @@ import {
   TableBody,
   TableRow,
   TableCell,
-} from '@windmill/react-ui'
-import { StreamsRows } from './StreamsRows'
+} from "@windmill/react-ui";
+import { StreamsRows } from "./StreamsRows";
 
 export const StreamsTable = () => {
   return (
@@ -24,5 +24,5 @@ export const StreamsTable = () => {
         </TableBody>
       </Table>
     </TableContainer>
-  )
-}
+  );
+};

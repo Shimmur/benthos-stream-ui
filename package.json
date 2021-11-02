@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "format": "npx prettier --write src/"
   },
   "dependencies": {
     "@windmill/react-ui": "^0.6.0",

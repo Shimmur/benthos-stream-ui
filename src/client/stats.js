@@ -1,5 +1,5 @@
-import { GET } from '.'
+import { GET } from ".";
 
 export const getStats = (path) => {
-  return GET('stats')
-}
+  return GET("stats");
+};
