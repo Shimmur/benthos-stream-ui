@@ -7,8 +7,11 @@ export const StatsFooter = () => {
   const {
     stats: {
       stats: { uptime, goroutines },
-      loadStats,
     },
+    version: {
+      version: { version },
+    },
+    loadStats,
   } = useContext(StatsContext);
 
   useInterval(() => {
@@ -20,6 +23,10 @@ export const StatsFooter = () => {
       <Card>
         <CardBody className="flex flex-row justify-between">
           <small>
+            <Badge>
+              <code>benthos version: </code>
+            </Badge>{" "}
+            {version}
             <Badge>
               <code>goroutines: </code>
             </Badge>{" "}

@@ -1,12 +1,16 @@
 import { useEffect, useState, createContext } from "react";
 import { getStats } from "../client/stats";
+import { getVersion } from "../client/version";
 
 export const StatsContext = createContext();
 
 export const StatsCache = ({ children }) => {
   const [stats, setStats] = useState([]);
-  const [isLoading, setIsLoading] = useState([]);
-  const [error, setError] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [version, setVersion] = useState([]);
+  const [versionIsLoading, setVersionIsLoading] = useState(true);
+  const [versionError, setVersionError] = useState(false);
   const loadStats = async () => {
     setIsLoading(true);
     try {
@@ -20,9 +24,23 @@ export const StatsCache = ({ children }) => {
       setIsLoading(false);
     }
   };
+  const loadVersion = async () => {
+    setVersionIsLoading(true);
+    try {
+      const response = await getVersion();
+      const version = await response;
+      setVersion(version);
+    } catch (e) {
+      console.error(e);
+      setVersionError(e);
+    } finally {
+      setVersionIsLoading(false);
+    }
+  };
 
   useEffect(() => {
     loadStats();
+    loadVersion();
   }, []);
 
   const cacheValue = {
@@ -30,8 +48,14 @@ export const StatsCache = ({ children }) => {
       stats,
       isLoading,
       error,
-      loadStats,
     },
+    version: {
+      version,
+      versionIsLoading,
+      versionError,
+    },
+    loadStats,
+    loadVersion,
   };
   return (
     <StatsContext.Provider value={cacheValue}>{children}</StatsContext.Provider>

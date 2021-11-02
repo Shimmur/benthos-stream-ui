@@ -5,8 +5,8 @@ export const EndpointsContext = createContext();
 
 export const EndpointsCache = ({ children }) => {
   const [endpoints, setEndpoints] = useState({});
-  const [isLoading, setIsLoading] = useState([]);
-  const [error, setError] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
   const loadEndpoints = async () => {
     setIsLoading(true);
     try {
@@ -30,10 +30,12 @@ export const EndpointsCache = ({ children }) => {
       endpoints,
       isLoading,
       error,
-      loadEndpoints,
     },
+    loadEndpoints,
   };
   return (
-    <EndpointsContext.Provider value={cacheValue}>{children}</EndpointsContext.Provider>
+    <EndpointsContext.Provider value={cacheValue}>
+      {children}
+    </EndpointsContext.Provider>
   );
 };

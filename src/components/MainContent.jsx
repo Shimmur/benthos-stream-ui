@@ -1,5 +1,6 @@
 import { Route, Switch, Redirect } from "react-router-dom";
 import { StreamsSection } from "./StreamsSection";
+import { StatsSection } from "./StatsSection";
 import { StreamDetail } from "./StreamDetail";
 export const MainContent = () => {
   return (
@@ -11,10 +12,13 @@ export const MainContent = () => {
             <StreamDetail streamId={match.params.streamId} />
           )}
         />
-        <Route path="/">
+        <Route path="/streams">
           <StreamsSection />
         </Route>
-        <Redirect to="/" />
+        <Route path="/stats">
+          <StatsSection />
+        </Route>
+        <Redirect to="/streams" />
       </Switch>
     </div>
   );
