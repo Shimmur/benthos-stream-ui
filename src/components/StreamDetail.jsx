@@ -15,15 +15,13 @@ export const StreamDetail = ({ streamId }) => {
   if (isLoading) return <h1>Loading</h1>;
   if (error) return <h1>Error</h1>;
 
-  console.log(JSON.stringify(stream.config, null, 2));
-
   return (
     <>
-      <Link className="text-5xl mb-4" to="/">
+      <Link className="text-5xl" to="/">
         ←
       </Link>
-      <h1 className="text-5xl mb-4">{streamId}</h1>
-      <div className="h-4/5 overflow-y-scroll">
+      <h1 className="text-5xl p4 border-b-4 border-indigo-600">{streamId}</h1>
+      <div className="overflow-y-scroll">
         <pre>
           <code className="overflow-y-scroll">
             {JSON.stringify(stream.config, null, 2)}
