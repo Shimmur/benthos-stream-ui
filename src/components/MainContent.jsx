@@ -3,7 +3,7 @@ import { StreamsSection } from "./StreamsSection";
 import { StreamDetail } from "./StreamDetail";
 export const MainContent = () => {
   return (
-    <div className="flex flex-col w-full h-screen bg-gray-200 p-4">
+    <div className="flex flex-col w-full h-screen bg-gray-200 p-4 justify-between">
       <Switch>
         <Route
           path="/streams/:streamId"

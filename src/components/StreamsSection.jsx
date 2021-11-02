@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { StreamsContext } from "../cache/streams";
 import { StreamsTable } from "./StreamsTable/StreamsTable";
+import { StatsFooter } from "./StatsFooter";
 
 export const StreamsSection = () => {
   const {
-    streams: { streams, isLoading, error },
+    streams: { isLoading, error },
   } = useContext(StreamsContext);
 
   if (isLoading) return <h1>Loading</h1>;
@@ -12,8 +13,8 @@ export const StreamsSection = () => {
 
   return (
     <>
-      <h1 className="text-5xl mb-4">Streams</h1>
       <StreamsTable />
+      <StatsFooter />
     </>
   );
 };

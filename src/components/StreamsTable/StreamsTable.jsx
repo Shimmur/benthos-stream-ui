@@ -11,6 +11,7 @@ import { StreamsRows } from "./StreamsRows";
 export const StreamsTable = () => {
   return (
     <TableContainer>
+      <h1 className="text-3xl ml-2">STREAMS</h1>
       <Table>
         <TableHeader>
           <TableRow>
