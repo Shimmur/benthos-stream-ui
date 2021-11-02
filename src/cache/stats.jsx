@@ -20,6 +20,7 @@ export const StatsCache = ({ children }) => {
       setIsLoading(false);
     }
   };
+
   useEffect(() => {
     loadStats();
   }, []);
@@ -29,6 +30,7 @@ export const StatsCache = ({ children }) => {
       stats,
       isLoading,
       error,
+      loadStats,
     },
   };
   return (
