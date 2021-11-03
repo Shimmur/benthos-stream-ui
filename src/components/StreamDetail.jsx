@@ -18,9 +18,8 @@ export const StreamDetail = ({ streamId }) => {
   return (
     <>
       <Link className="text-5xl" to="/">
-        ←
+        <h1 className="text-5xl p4 border-b-4 border-indigo-600"> ← {streamId}</h1>
       </Link>
-      <h1 className="text-5xl p4 border-b-4 border-indigo-600">{streamId}</h1>
       <div className="overflow-y-scroll">
         <pre>
           <code className="overflow-y-scroll">

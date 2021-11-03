@@ -3,6 +3,8 @@ import { StreamsSection } from "./StreamsSection";
 import { StatsSection } from "./StatsSection";
 import { ResourcesSection } from "./ResourcesSection";
 import { StreamDetail } from "./StreamDetail";
+import { StatsFooter } from "./StatsFooter";
+
 export const MainContent = () => {
   return (
     <div className="flex flex-col w-full h-screen bg-gray-200 p-4 justify-between">
@@ -24,6 +26,7 @@ export const MainContent = () => {
         </Route>
         <Redirect to="/streams" />
       </Switch>
+      <StatsFooter />
     </div>
   );
 };
