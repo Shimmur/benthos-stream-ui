@@ -24,7 +24,8 @@ export const NavLinks = () => {
       if (boringEndpoints.includes(endpoint)) return false;
       return true;
     })
-    .map(([endpoint]) => <NavLink key={endpoint} name={endpoint.slice(1)} />);
+    .map(([endpoint]) => <NavLink key={endpoint} name={endpoint.slice(1)} />)
+    .concat([<NavLink key={endpoints.length} name="resources" />]);
   return (
     <div className="flex flex-col flex-wrap max-w-24 h-screen">{navLinks}</div>
   );
