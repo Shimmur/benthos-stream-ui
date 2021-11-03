@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { StreamsContext } from "../cache/streams";
+import ReactJson from "react-json-view";
 
 export const StreamDetail = ({ streamId }) => {
   const {
@@ -18,14 +19,19 @@ export const StreamDetail = ({ streamId }) => {
   return (
     <>
       <Link className="text-5xl" to="/">
-        <h1 className="text-5xl p4 border-b-4 border-indigo-600"> ← {streamId}</h1>
+        <h1 className="text-5xl p4"> ← {streamId}</h1>
       </Link>
-      <div className="overflow-y-scroll">
-        <pre>
-          <code className="overflow-y-scroll">
-            {JSON.stringify(stream.config, null, 2)}
-          </code>
-        </pre>
+      <div className="max-h-full overflow-y-scroll border-b-2 border-t-2 border-indigo-600">
+        <ReactJson
+          src={stream.config}
+          name={streamId}
+          iconStyle="square"
+          displayDataTypes={false}
+          theme="summerfruit:inverted"
+          style={{
+            "font-family": "inherit",
+          }}
+        />
       </div>
     </>
   );
