@@ -29,7 +29,7 @@ export const StreamDetail = ({ streamId }) => {
           displayDataTypes={false}
           theme="summerfruit:inverted"
           style={{
-            "font-family": "inherit",
+            fontFamily: "inherit",
           }}
         />
       </div>
